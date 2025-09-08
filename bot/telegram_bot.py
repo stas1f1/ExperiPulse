@@ -21,7 +21,7 @@ class ExperimentBot:
         if not self.token:
             raise ValueError("TELEGRAM_BOT_TOKEN not found in environment variables")
 
-        self.db_path = "experiment_bot.db"
+        self.db_path = os.getenv('DATABASE_PATH', 'experiment_bot.db')
         self.init_database()
 
     def init_database(self):

@@ -25,7 +25,7 @@ class ApiResponse(BaseModel):
 
 class APIServer:
     def __init__(self):
-        self.db_path = "experiment_bot.db"
+        self.db_path = os.getenv('DATABASE_PATH', 'experiment_bot.db')
         self.telegram_token = os.getenv('TELEGRAM_BOT_TOKEN')
         if not self.telegram_token:
             raise ValueError("TELEGRAM_BOT_TOKEN not found in environment variables")

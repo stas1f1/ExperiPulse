@@ -2,8 +2,10 @@ import sqlite3
 import os
 from datetime import datetime
 
-def init_database(db_path: str = "experiment_bot.db"):
+def init_database(db_path: str = None):
     """Initialize the SQLite database with required tables"""
+    if db_path is None:
+        db_path = os.getenv('DATABASE_PATH', 'experiment_bot.db')
 
     # Create database directory if it doesn't exist
     db_dir = os.path.dirname(db_path)
