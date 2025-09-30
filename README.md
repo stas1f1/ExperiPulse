@@ -1,4 +1,4 @@
-# ExperimentBot
+# ExperiPulse
 
 A Telegram bot that allows you to track your progress with long experiments and receive real-time notifications.
 
